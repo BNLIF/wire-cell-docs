@@ -172,3 +172,13 @@ Or, if you are still stuck using `tcsh` do:
 ```csh
 > source /gpfs01/lbne/users/sw/wc/bin/thisroot.csh
 ```
+
+# FNAL Setup
+
+At Fermilab, externals are provided by UPS.
+
+```bash
+$ source /grid/fermiapp/products/larsoft/setups
+$ setup root v6_04_02 -q e7:prof
+$ setup boost v1_57_0 -q e7:prof
+```
