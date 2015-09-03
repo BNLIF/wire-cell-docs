@@ -91,6 +91,9 @@
                 <li class="toctree-l3"><a href="#racf-setup">RACF Setup</a></li>
                 
             
+                <li class="toctree-l3"><a href="#fnal-setup">FNAL Setup</a></li>
+                
+            
             </ul>
         
     </li>
@@ -254,6 +257,7 @@
 </ul>
 </li>
 <li><a href="#racf-setup">RACF Setup</a></li>
+<li><a href="#fnal-setup">FNAL Setup</a></li>
 </ul>
 </div>
 <p>The <code>wire-cell</code> software in <a href="https://github.com/BNLIF">BNL IF GitHub</a> depends on some software that may not come with your OS, in particular <a href="http://root.cern.ch">ROOT</a> v6 and a compiler supports C++11.</p>
@@ -385,6 +389,13 @@ $ python -c 'import ROOT; print ROOT.gROOT.GetVersion()'
 
 <p>Or, if you are still stuck using <code>tcsh</code> do:</p>
 <pre><code class="csh">&gt; source /gpfs01/lbne/users/sw/wc/bin/thisroot.csh
+</code></pre>
+
+<h1 id="fnal-setup">FNAL Setup</h1>
+<p>At Fermilab, externals are provided by UPS.</p>
+<pre><code class="bash">$ source /grid/fermiapp/products/larsoft/setups
+$ setup root v6_04_02 -q e7:prof
+$ setup boost v1_57_0 -q e7:prof
 </code></pre>
               
             </div>
