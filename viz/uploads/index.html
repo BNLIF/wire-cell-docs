@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>WebGL - Wire Cell Documentation</title>
+  <title>User Uploads - Wire Cell Documentation</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "WebGL";
+    var mkdocs_page_name = "User Uploads";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -149,10 +149,23 @@
 
         
             
+    <li class="toctree-l1 ">
+        <a class="" href="../bee/">BEE</a>
+        
+    </li>
+
+        
+            
     <li class="toctree-l1 current">
-        <a class="current" href="./">WebGL</a>
+        <a class="current" href="./">User Uploads</a>
         
             <ul>
+            
+                <li class="toctree-l3"><a href="#json-schema">JSON Schema</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#upload-file-structure">Upload File Structure</a></li>
+                
             
             </ul>
         
@@ -203,7 +216,7 @@
         
       
     
-    <li>WebGL</li>
+    <li>User Uploads</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -217,7 +230,113 @@
           <div role="main">
             <div class="section">
               
-                
+                <div class="toc">
+<ul>
+<li><a href="#json-schema">JSON Schema</a></li>
+<li><a href="#upload-file-structure">Upload File Structure</a></li>
+</ul>
+</div>
+<h1 id="json-schema">JSON Schema</h1>
+<p>BEE can be used to display results from any algorithms that produce <em>3D space points</em>.
+At the core, it parses a JSON file that looks like:</p>
+<pre><code class="json">{
+    &quot;runNo&quot;    : &quot;10000007&quot;,
+    &quot;subRunNo&quot; : &quot;16&quot;,
+    &quot;eventNo&quot;  : &quot;1501&quot;,
+    &quot;x&quot;        : [1.0, 1.0, 3.0],
+    &quot;y&quot;        : [2.0, 3.0, 4.0],
+    &quot;z&quot;        : [3.0, 7.0, 4.5],
+    &quot;q&quot;        : [3000, 4200, 5600],
+    &quot;geom&quot;     : &quot;uboone&quot;,
+    &quot;type&quot;     : &quot;wire-cell&quot;
+}
+</code></pre>
+
+<p>In the JSON file, only the <code>x</code>, <code>y</code>, and <code>z</code> variables are required, all others are optional.
+Their descriptions are summarized below:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td>array of x coordinates of the 3D space points [cm]</td>
+<td>(required)</td>
+</tr>
+<tr>
+<td>y</td>
+<td>array of y coordinates of the 3D space points [cm]</td>
+<td>(required)</td>
+</tr>
+<tr>
+<td>z</td>
+<td>array of z coordinates of the 3D space points [cm]</td>
+<td>(required)</td>
+</tr>
+<tr>
+<td>q</td>
+<td>array of charges for the 3D space points [number of electrons]</td>
+<td>[0,..]</td>
+</tr>
+<tr>
+<td>runNo</td>
+<td>DAQ run number</td>
+<td>0</td>
+</tr>
+<tr>
+<td>subRunNo</td>
+<td>DAQ subrun number</td>
+<td>0</td>
+</tr>
+<tr>
+<td>eventNo</td>
+<td>DAQ event number</td>
+<td>0</td>
+</tr>
+<tr>
+<td>geom</td>
+<td>name of the detector geometry ("uboone", "dune35t")</td>
+<td>"uboone"</td>
+</tr>
+<tr>
+<td>type</td>
+<td>name of the algorithm</td>
+<td>""</td>
+</tr>
+</tbody>
+</table>
+<h1 id="upload-file-structure">Upload File Structure</h1>
+<p>BEE supports user uploads through drag-and-drop to the dropzone on <a href="http://www.phy.bnl.gov/wire-cell/bee/">the BEE homepage</a>.
+The uploaded file must be a <code>.zip</code> file that contains the following structure</p>
+<pre><code>myfile.zip
+└── data
+    ├── 0
+    │   ├── 0-myAlg1.json
+    │   ├── 0-myAlg2.json
+    │   ├── 0-myAlg3.json
+    ├── 1
+    │   ├── 1-myAlg1.json
+    │   ├── 1-myAlg1.json
+    │   ├── 1-myAlg1.json
+
+</code></pre>
+
+<p>or, more specifically:</p>
+<ul>
+<li>the top directory must be named <code>data/</code></li>
+<li>each event has its own numbered sub-directory</li>
+<li>each algorithm has its own JSON file</li>
+<li>the JSON file should be named as <code>{eventID}-{algName}.json</code></li>
+<li>the event ID should be sequential and start from 0</li>
+</ul>
+<p>Once the directory and files are ready, the <code>.zip</code> file can be created with any prefered zip compression tools. As an example, in linux, one can create the <code>myfile.zip</code> file for upload by running</p>
+<pre><code class="bash">zip -r myfile data
+</code></pre>
               
             </div>
           </div>
@@ -228,7 +347,7 @@
         <a href="../../meta/meta/" class="btn btn-neutral float-right" title="About"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../alg/blob/" class="btn btn-neutral" title="Blob Reconstruction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../bee/" class="btn btn-neutral" title="BEE"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -256,7 +375,7 @@
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../../alg/blob/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../bee/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../../meta/meta/" style="color: #fcfcfc">Next &raquo;</a></span>
