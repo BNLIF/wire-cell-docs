@@ -74,7 +74,14 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#overview">Overview</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#manual-installation-of-externals">Manual installation of externals</a></li>
+                
+                    <li><a class="toctree-l4" href="#compiler">Compiler</a></li>
+                
+                    <li><a class="toctree-l4" href="#root6">ROOT6</a></li>
                 
             
                 <li class="toctree-l3"><a href="#automated-installation-with-worch">Automated installation with Worch</a></li>
@@ -88,10 +95,11 @@
                     <li><a class="toctree-l4" href="#install">Install</a></li>
                 
             
-                <li class="toctree-l3"><a href="#racf-setup">RACF Setup</a></li>
+                <li class="toctree-l3"><a href="#site-installations">Site installations</a></li>
                 
-            
-                <li class="toctree-l3"><a href="#fnal-setup">FNAL Setup</a></li>
+                    <li><a class="toctree-l4" href="#racf-setup">RACF Setup</a></li>
+                
+                    <li><a class="toctree-l4" href="#fnal-setup">FNAL Setup</a></li>
                 
             
             </ul>
@@ -246,7 +254,12 @@
               
                 <div class="toc">
 <ul>
-<li><a href="#manual-installation-of-externals">Manual installation of externals</a></li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#manual-installation-of-externals">Manual installation of externals</a><ul>
+<li><a href="#compiler">Compiler</a></li>
+<li><a href="#root6">ROOT6</a></li>
+</ul>
+</li>
 <li><a href="#automated-installation-with-worch">Automated installation with Worch</a><ul>
 <li><a href="#quickstart">Quickstart</a></li>
 <li><a href="#preparing-worch">Preparing Worch</a><ul>
@@ -263,14 +276,56 @@
 </li>
 </ul>
 </li>
+<li><a href="#site-installations">Site installations</a><ul>
 <li><a href="#racf-setup">RACF Setup</a></li>
 <li><a href="#fnal-setup">FNAL Setup</a></li>
 </ul>
+</li>
+</ul>
 </div>
+<h1 id="overview">Overview</h1>
 <p>The <code>wire-cell</code> software in <a href="https://github.com/BNLIF">BNL IF GitHub</a> depends on some software that may not come with your OS, in particular <a href="http://root.cern.ch">ROOT</a> v6 and a compiler supports C++11.</p>
-<p>You can provide the prerequisites as you wish or you can make use of the provided <a href="https://github.com/brettviren/worch">Worch</a>-based automation to build the prerequisites from source.</p>
+<p>There are three likely ways to supply the required externals described below.</p>
+<ol>
+<li>
+<p>manually build or otheriwse provide them yourself.</p>
+</li>
+<li>
+<p>automatically build and install them with the <a href="https://github.com/brettviren/worch">Worch</a>-based build orchestration system.</p>
+</li>
+<li>
+<p>use an existing site-installation.</p>
+</li>
+</ol>
+<p>The following sections gives details on each of these approaches.</p>
 <h1 id="manual-installation-of-externals">Manual installation of externals</h1>
-<p>This is left as an excercise to the reader.</p>
+<p>You may provide Wire Cell externals as you wish.  This section gives
+guidance on how to do this.  It mostly does this by references details
+in the configuration files that drive the Worch automated build
+orchestration described in the next section.</p>
+<p>Some general things to assure:</p>
+<ul>
+<li>use the same compiler for all C++ packages.</li>
+<li>use a compiler that supports C++11.</li>
+<li>all C++ packages built against the C++11 standard, eg GCC's <code>-std=c++11</code> flag.</li>
+</ul>
+<p>Required packages and their recomended versions are in <a href="https://github.com/BNLIF/wire-cell-externals/blob/master/defaults.cfg">defaults.cfg</a>.</p>
+<p>The rest of this section gives some guidance on specific packages.</p>
+<h2 id="compiler">Compiler</h2>
+<p>You must use a compiler that supports C++11.
+Clang may work but is untested (please report successes/failures).
+GCC 4.9.2 is what the developers currently use.</p>
+<p>Building GCC is relatively straight-forward but it does involve a
+half-dozen packages including GCC itself.</p>
+<p>No special tricks are needed.  See <a href="https://github.com/BNLIF/wire-cell-externals/blob/master/compiler.cfg">compiler.cfg</a> for detailed URLs and build flags.</p>
+<h2 id="root6">ROOT6</h2>
+<p>Details of how Worch builds ROOT are in the <a href="https://github.com/BNLIF/wire-cell-externals/blob/master/packages.cfg">packages.cfg</a> file.  CMake is used and the flag <code>-Dcxx11=ON</code> assures C++11 is used.  Other CMake options must be passed to tell it where to find the other externals (eg, Python, FFTW).  See the <code>packages.cfg</code> file for details.</p>
+<p>You may wish to turn on additional features.  Wire Cell needs:</p>
+<ul>
+<li>minuit2</li>
+<li>python</li>
+<li>fftw</li>
+</ul>
 <h1 id="automated-installation-with-worch">Automated installation with Worch</h1>
 <p>This method will automatically build the necessary packages from
 source.  It requires some initial manual preparation followed by
@@ -388,7 +443,10 @@ $ python -c 'import ROOT; print ROOT.gROOT.GetVersion()'
 6.02/05
 </code></pre>
 
-<h1 id="racf-setup">RACF Setup</h1>
+<h1 id="site-installations">Site installations</h1>
+<p>Some sites associated with Wire Cell development have already been
+provisioned with the necessary externals and you may leverage them.</p>
+<h2 id="racf-setup">RACF Setup</h2>
 <p>At BNL's RACF, a simple, single-rooted installation of Wire Cell external packages is provided.</p>
 <p>Bash users do:</p>
 <pre><code class="bash">$ source /gpfs01/lbne/users/sw/wc/bin/thisroot.sh
@@ -398,7 +456,7 @@ $ python -c 'import ROOT; print ROOT.gROOT.GetVersion()'
 <pre><code class="csh">&gt; source /gpfs01/lbne/users/sw/wc/bin/thisroot.csh
 </code></pre>
 
-<h1 id="fnal-setup">FNAL Setup</h1>
+<h2 id="fnal-setup">FNAL Setup</h2>
 <p>At Fermilab, externals are provided by UPS.</p>
 <pre><code class="bash">$ source /grid/fermiapp/products/larsoft/setups
 $ setup root v6_04_02 -q e7:prof
