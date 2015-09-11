@@ -61,6 +61,13 @@ unattended, if lengthy, building.
 
 ## Quickstart
 
+Before you start, make sure you have the essitial build tools from the OS.
+For Example, in *Ubuntu*, you need to have the following packages installed:
+
+```bash
+sudo apt-get install git build-essential libboost-all-dev libsqlite3-dev tcl8.5-dev libxpm-dev libxft-dev libXext-dev
+```
+
 If you don’t care what this does, just cut and paste.  If something "doesn't work" then read the subsequent sections.
 
 ```bash

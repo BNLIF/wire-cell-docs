@@ -7,7 +7,7 @@ This site uses MkDocs and is served by GitHub.
 ```bash
 $ git clone git@github.com:BNLIF/wire-cell-docs.git
 $ cd wire-cell-docs
-$ emacs 
+$ emacs
 $ git commit -a -m "..."
 $ git push
 ```
@@ -15,8 +15,8 @@ $ git push
 ### To preview
 
 ```bash
-$ mkdocs server
-INFO    -  Building documentation... 
+$ mkdocs serve
+INFO    -  Building documentation...
 [I 150708 17:57:26 server:271] Serving on http://127.0.0.1:8000
 [I 150708 17:57:26 handlers:58] Start watching changes
 [I 150708 17:57:26 handlers:60] Start detecting changes
