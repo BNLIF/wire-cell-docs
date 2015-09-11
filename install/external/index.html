@@ -331,6 +331,11 @@ half-dozen packages including GCC itself.</p>
 source.  It requires some initial manual preparation followed by
 unattended, if lengthy, building.</p>
 <h2 id="quickstart">Quickstart</h2>
+<p>Before you start, make sure you have the essitial build tools from the OS.
+For Example, in <em>Ubuntu</em>, you need to have the following packages installed:</p>
+<pre><code class="bash">sudo apt-get install git build-essential libboost-all-dev libsqlite3-dev tcl8.5-dev libxpm-dev libxft-dev libXext-dev
+</code></pre>
+
 <p>If you don’t care what this does, just cut and paste.  If something "doesn't work" then read the subsequent sections.</p>
 <pre><code class="bash">$ virtualenv /path/to/buildenv
 $ source /path/to/buildenv/bin/activate
