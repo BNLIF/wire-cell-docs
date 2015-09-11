@@ -1,13 +1,57 @@
 [TOC]
 
+# Overview
 
 The ``wire-cell`` software in [BNL IF GitHub](https://github.com/BNLIF) depends on some software that may not come with your OS, in particular [ROOT](http://root.cern.ch) v6 and a compiler supports C++11.
 
-You can provide the prerequisites as you wish or you can make use of the provided [Worch](https://github.com/brettviren/worch)-based automation to build the prerequisites from source.
+There are three likely ways to supply the required externals described below.
+
+1. manually build or otheriwse provide them yourself.
+
+2. automatically build and install them with the [Worch](https://github.com/brettviren/worch)-based build orchestration system.
+
+3. use an existing site-installation.
+
+The following sections gives details on each of these approaches.
+
 
 # Manual installation of externals
 
-This is left as an excercise to the reader.
+You may provide Wire Cell externals as you wish.  This section gives
+guidance on how to do this.  It mostly does this by references details
+in the configuration files that drive the Worch automated build
+orchestration described in the next section.
+
+Some general things to assure:
+
+* use the same compiler for all C++ packages.
+* use a compiler that supports C++11.
+* all C++ packages built against the C++11 standard, eg GCC's `-std=c++11` flag.
+
+Required packages and their recomended versions are in [defaults.cfg](https://github.com/BNLIF/wire-cell-externals/blob/master/defaults.cfg).
+
+The rest of this section gives some guidance on specific packages.
+
+## Compiler
+
+You must use a compiler that supports C++11.
+Clang may work but is untested (please report successes/failures).
+GCC 4.9.2 is what the developers currently use.
+
+Building GCC is relatively straight-forward but it does involve a
+half-dozen packages including GCC itself.
+
+No special tricks are needed.  See [compiler.cfg](https://github.com/BNLIF/wire-cell-externals/blob/master/compiler.cfg) for detailed URLs and build flags.
+
+## ROOT6
+
+Details of how Worch builds ROOT are in the [packages.cfg](https://github.com/BNLIF/wire-cell-externals/blob/master/packages.cfg) file.  CMake is used and the flag `-Dcxx11=ON` assures C++11 is used.  Other CMake options must be passed to tell it where to find the other externals (eg, Python, FFTW).  See the `packages.cfg` file for details.
+
+You may wish to turn on additional features.  Wire Cell needs:
+
+* minuit2
+* python
+* fftw
 
 # Automated installation with Worch
 
@@ -157,7 +201,12 @@ $ python -c 'import ROOT; print ROOT.gROOT.GetVersion()'
 6.02/05
 ```
 
-# RACF Setup
+# Site installations
+
+Some sites associated with Wire Cell development have already been
+provisioned with the necessary externals and you may leverage them.
+
+## RACF Setup
 
 At BNL's RACF, a simple, single-rooted installation of Wire Cell external packages is provided.
 
@@ -173,7 +222,7 @@ Or, if you are still stuck using `tcsh` do:
 > source /gpfs01/lbne/users/sw/wc/bin/thisroot.csh
 ```
 
-# FNAL Setup
+## FNAL Setup
 
 At Fermilab, externals are provided by UPS.
 
