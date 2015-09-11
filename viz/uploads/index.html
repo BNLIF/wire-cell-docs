@@ -167,6 +167,11 @@
                 <li class="toctree-l3"><a href="#upload-file-structure">Upload File Structure</a></li>
                 
             
+                <li class="toctree-l3"><a href="#tools">Tools</a></li>
+                
+                    <li><a class="toctree-l4" href="#convert-wire-cell-output-to-bee">Convert Wire-Cell Output to BEE</a></li>
+                
+            
             </ul>
         
     </li>
@@ -234,6 +239,10 @@
 <ul>
 <li><a href="#json-schema">JSON Schema</a></li>
 <li><a href="#upload-file-structure">Upload File Structure</a></li>
+<li><a href="#tools">Tools</a><ul>
+<li><a href="#convert-wire-cell-output-to-bee">Convert Wire-Cell Output to BEE</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <h1 id="json-schema">JSON Schema</h1>
@@ -337,6 +346,23 @@ The uploaded file must be a <code>.zip</code> file that contains the following s
 <p>Once the directory and files are ready, the <code>.zip</code> file can be created with any prefered zip compression tools. As an example, in linux, one can create the <code>myfile.zip</code> file for upload by running</p>
 <pre><code class="bash">zip -r myfile data
 </code></pre>
+
+<h1 id="tools">Tools</h1>
+<h2 id="convert-wire-cell-output-to-bee">Convert Wire-Cell Output to BEE</h2>
+<p>Download the the two files from <a href="https://github.com/WireCell/wire-cell-bee/tree/master/tools/wire-cell-to-bee">here</a>, then run</p>
+<pre><code class="bash">python dump_json.py [filename] [alg1 alg2 ...]
+</code></pre>
+
+<p>The currently available Wire-Cell algorithms are <code>simple</code>, <code>charge</code>, <code>true</code>, and <code>deblob</code>.
+At the end of the run, a <code>to_upload.zip</code> is created and can be drag-to-upload to <a href="http://www.phy.bnl.gov/wire-cell/bee/">BEE</a></p>
+<p>Some notes:</p>
+<ul>
+<li>The default algorithms to run are <code>simple</code> and <code>charge</code> if not specified</li>
+<li>The script expects the ROOT file ending with <code>_{eventID}.root</code>,
+and will actually run through all files in the same directory that have the same prefix.</li>
+<li>If your files are in the same directory but have different prefix,
+you can use a special syntax <code>python dump_json.py 'yourdir/*_*.root' [alg1 alg2 ...]</code>. Please don't foget the single quotes.</li>
+</ul>
               
             </div>
           </div>
