@@ -87,3 +87,37 @@ Some notes:
 and will actually run through all files in the same directory that have the same prefix.
 - If your files are in the same directory but have different prefix,
 you can use a special syntax `python dump_json.py 'yourdir/*_*.root' [alg1 alg2 ...]`. Please don't foget the single quotes.
+
+
+## Convert LArSoft Output to BEE
+
+Assuming that you have installed `larsoft` and checked out the `larreco` repo already (if not, follow [here](https://cdcvs.fnal.gov/redmine/projects/dunetpc/wiki/_Tutorial_)),
+you need then check out a feature branch `feature/tjyang_wirecellmerge` in `larreco`, and build again.
+
+```bash
+cd larreco
+git checkout feature/tjyang_wirecellmerge
+pushd $MRB_BUILDDIR; make install; popd
+```
+
+This will install a new module named `CellTree`,
+and you can run the following script to convert your larsoft output to BEE
+
+```bash
+lar -c celltree_dune35t.fcl [filename]
+```
+
+or, for MicroBooNE
+
+```bash
+lar -c celltree_uboone.fcl [filename]
+```
+
+It will create  create a `bee/bee_upload.zip` file under your working directory.
+You can then drag-and-drop the zip file to [BEE](http://www.phy.bnl.gov/wire-cell/bee/) to view the results
+(and MC tracks).
+
+The `CellTree` module works for any larsoft output that contains *Space Points*.
+To change or add different `SpacePoint` algorithms (it supports multiple algorithms),
+copy the `celltree_{detector}.fcl` file to your working directory
+and modify the line `SpacePointLabels: ["pmtrackdc"]` to include your favorate algorithms.
