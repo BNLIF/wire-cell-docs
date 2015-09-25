@@ -113,7 +113,7 @@ or, for MicroBooNE
 lar -c celltree_uboone.fcl [filename]
 ```
 
-It will create  create a `bee/bee_upload.zip` file under your working directory.
+It will create a `bee/bee_upload.zip` file under your working directory.
 You can then drag-and-drop the zip file to [BEE](http://www.phy.bnl.gov/wire-cell/bee/) to view the results
 (and MC tracks).
 
