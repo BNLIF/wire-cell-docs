@@ -154,6 +154,15 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#introduction-to-bee">Introduction to BEE</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#requirements">Requirements</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#hotkeys">Hotkeys</a></li>
+                
+            
             </ul>
         
     </li>
@@ -224,7 +233,123 @@
           <div role="main">
             <div class="section">
               
-                
+                <div class="toc">
+<ul>
+<li><a href="#introduction-to-bee">Introduction to BEE</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#hotkeys">Hotkeys</a></li>
+</ul>
+</div>
+<h1 id="introduction-to-bee">Introduction to BEE</h1>
+<p>Displaying 3D reconstrution results is difficult.
+Often it requires installation of some platform-dependent programs and dowloading some pre-formated data.
+For most physcists, it's too much effort ("Just show me the results!")</p>
+<p><a href="http://www.phy.bnl.gov/wire-cell/bee/">BEE</a> is a web-based application intended to solve this problem, and bring the interactive 3D world to the physicists.
+In particular, one can enjoy the following features:</p>
+<ul>
+<li><em>No setup</em> : Just go to <a href="http://www.phy.bnl.gov/wire-cell/bee/">the BEE homepage</a>.</li>
+<li><em>Cross-platform</em> : Runs everywhere with <a href="http://caniuse.com/#feat=webgl">a modern web browser that supports WebGL</a>, including mobile devices.</li>
+<li><em>Interactive</em> : Unleashes the power of WebGL with mouse, keyboard and touch devices.</li>
+<li><em>Optimized for LArTPC</em> : Tomographic mode, projections, multiple geometries, ...</li>
+<li><em>Optimized for developers</em> : User uploads, multiple algorithms, MC truth, customizable overlay, ...</li>
+<li><em>Optimized for public</em> : Explore the large preset samples of different neutrino interactions in LArTPC!</li>
+</ul>
+<h1 id="requirements">Requirements</h1>
+<p>The only requirements to run BEE are:</p>
+<ul>
+<li>A modern web browser that supports WebGL. (<a href="http://caniuse.com/#feat=webgl">Will my browser work?</a>)
+  We recommend <a href="http://www.google.com/chrome/">Google Chrome</a> for the best experience.</li>
+<li>An internet connection.</li>
+<li>A relatively good graphic card. A discrete GPU greatly enhances the performance.</li>
+</ul>
+<p>The following table summarizes the basic interactions with BEE on different devices:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Mouse</th>
+<th>Keyboard</th>
+<th>Touch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rotate</td>
+<td>Left button drag</td>
+<td></td>
+<td>One-finger touch</td>
+</tr>
+<tr>
+<td>Pan</td>
+<td>Right button drag</td>
+<td>Left / Right / Up / Down</td>
+<td>Three-finger swipe</td>
+</tr>
+<tr>
+<td>Zoom in / Zoom out</td>
+<td>Mouse wheel</td>
+<td>Shift+Up / Shift+Down</td>
+<td>Pinch &amp; Zoom</td>
+</tr>
+</tbody>
+</table>
+<h1 id="hotkeys">Hotkeys</h1>
+<p>Users may find it conveninet that most actions in BEE can be achived using keyboard shortcuts.
+The full list of hotkeys can be found through "Menu -&gt; View -&gt; Hotkey List", and is also summarized below:</p>
+<table class='table'>
+    <thead>
+      <tr>
+        <th>Command</th><th>Hotkey</th>
+        <th>Command</th><th>Hotkey</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Toggle MC</td><td>m</td>
+        <td>Toggle Charge</td><td>q</td>
+      </tr>
+      <tr>
+        <td>Next Event</td><td>Shift+n</td>
+        <td>Prev Event</td><td>Shift+p</td>
+      </tr>
+      <tr>
+        <td>Next Recon</td><td>]</td>
+        <td>Prev Recon</td><td>[</td>
+      </tr>
+      <tr>
+        <td>Next Slice</td><td>k</td>
+        <td>Prev Slice</td><td>j</td>
+      </tr>
+      <tr>
+        <td>Center to Event</td><td>c</td>
+        <td>Reset Camera</td><td>r</td>
+      </tr>
+      <tr>
+        <td>X-U view</td><td>u</td>
+        <td>X-V view</td><td>v</td>
+      </tr>
+      <tr>
+        <td>X-Z view</td><td>z</td>
+        <td>Y-Z view</td><td>c</td>
+      </tr>
+      <tr>
+        <td>Zoom in</td><td>Shift+Up</td>
+        <td>Zoom out</td><td>Shift+Down</td>
+      </tr>
+      <tr>
+        <td>Select Recon</td><td>1 - 9</td>
+        <td>Unselect All</td><td>Esc</td>
+      </tr>
+      <tr>
+        <td>Increase Opacity</td><td>=</td>
+        <td>Decrease Opacity</td><td>-</td>
+      </tr>
+      <tr>
+        <td>Increase Point Size</td><td>+</td>
+        <td>Decrease Point Size</td><td>_</td>
+      </tr>
+    </tbody>
+</table>
               
             </div>
           </div>
