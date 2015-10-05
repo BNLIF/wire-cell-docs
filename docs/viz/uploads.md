@@ -31,7 +31,7 @@ Their descriptions are summarized below:
 | runNo | DAQ run number | 0 |
 | subRunNo | DAQ subrun number | 0 |
 | eventNo | DAQ event number | 0 |
-| geom | name of the detector geometry ("uboone", "dune35t") | "uboone" |
+| geom | name of the detector geometry ("uboone", "dune35t", "protodune") | "uboone" |
 | type | name of the algorithm | "" |
 
 # Upload File Structure
@@ -91,33 +91,24 @@ you can use a special syntax `python dump_json.py 'yourdir/*_*.root' [alg1 alg2 
 
 ## Convert LArSoft Output to BEE
 
-Assuming that you have installed `larsoft` and checked out the `larreco` repo already (if not, follow [here](https://cdcvs.fnal.gov/redmine/projects/dunetpc/wiki/_Tutorial_)),
-you need then check out a feature branch `feature/tjyang_wirecellmerge` in `larreco`, and build again.
-
-```bash
-cd larreco
-git checkout feature/tjyang_wirecellmerge
-pushd $MRB_BUILDDIR; make install; popd
-```
-
-This will install a new module named `CellTree`,
-and you can run the following script to convert your larsoft output to BEE
+Assuming that you have `larsoft` installed,
+(if not, follow [here](https://cdcvs.fnal.gov/redmine/projects/dunetpc/wiki/_Tutorial_)),
+simply run the following script to convert your larsoft output to BEE
 
 ```bash
 lar -c celltree_dune35t.fcl [filename]
 ```
 
-or, for MicroBooNE
+or, for MicroBooNE / protoDUNE, change the corresponding `.fcl` file to
+`celltree_uboone.fcl` / `celltree_protodune.fcl`.
 
-```bash
-lar -c celltree_uboone.fcl [filename]
-```
 
 It will create a `bee/bee_upload.zip` file under your working directory.
 You can then drag-and-drop the zip file to [BEE](http://www.phy.bnl.gov/wire-cell/bee/) to view the results
 (and MC tracks).
 
-The `CellTree` module works for any larsoft output that contains *Space Points*.
+The `CellTree` module is located under [`larreco/WireCell/`](https://cdcvs.fnal.gov/redmine/projects/larreco/repository/revisions/develop/show/WireCell)
+It works for any larsoft output that contains *Space Points*.
 To change or add different `SpacePoint` algorithms (it supports multiple algorithms),
 copy the `celltree_{detector}.fcl` file to your working directory
 and modify the line `SpacePointLabels: ["pmtrackdc"]` to include your favorate algorithms.
