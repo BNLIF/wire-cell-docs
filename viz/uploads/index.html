@@ -312,7 +312,7 @@ Their descriptions are summarized below:</p>
 </tr>
 <tr>
 <td>geom</td>
-<td>name of the detector geometry ("uboone", "dune35t")</td>
+<td>name of the detector geometry ("uboone", "dune35t", "protodune")</td>
 <td>"uboone"</td>
 </tr>
 <tr>
@@ -367,26 +367,19 @@ and will actually run through all files in the same directory that have the same
 you can use a special syntax <code>python dump_json.py 'yourdir/*_*.root' [alg1 alg2 ...]</code>. Please don't foget the single quotes.</li>
 </ul>
 <h2 id="convert-larsoft-output-to-bee">Convert LArSoft Output to BEE</h2>
-<p>Assuming that you have installed <code>larsoft</code> and checked out the <code>larreco</code> repo already (if not, follow <a href="https://cdcvs.fnal.gov/redmine/projects/dunetpc/wiki/_Tutorial_">here</a>),
-you need then check out a feature branch <code>feature/tjyang_wirecellmerge</code> in <code>larreco</code>, and build again.</p>
-<pre><code class="bash">cd larreco
-git checkout feature/tjyang_wirecellmerge
-pushd $MRB_BUILDDIR; make install; popd
-</code></pre>
-
-<p>This will install a new module named <code>CellTree</code>,
-and you can run the following script to convert your larsoft output to BEE</p>
+<p>Assuming that you have <code>larsoft</code> installed,
+(if not, follow <a href="https://cdcvs.fnal.gov/redmine/projects/dunetpc/wiki/_Tutorial_">here</a>),
+simply run the following script to convert your larsoft output to BEE</p>
 <pre><code class="bash">lar -c celltree_dune35t.fcl [filename]
 </code></pre>
 
-<p>or, for MicroBooNE</p>
-<pre><code class="bash">lar -c celltree_uboone.fcl [filename]
-</code></pre>
-
+<p>or, for MicroBooNE / protoDUNE, change the corresponding <code>.fcl</code> file to
+<code>celltree_uboone.fcl</code> / <code>celltree_protodune.fcl</code>.</p>
 <p>It will create a <code>bee/bee_upload.zip</code> file under your working directory.
 You can then drag-and-drop the zip file to <a href="http://www.phy.bnl.gov/wire-cell/bee/">BEE</a> to view the results
 (and MC tracks).</p>
-<p>The <code>CellTree</code> module works for any larsoft output that contains <em>Space Points</em>.
+<p>The <code>CellTree</code> module is located under <a href="https://cdcvs.fnal.gov/redmine/projects/larreco/repository/revisions/develop/show/WireCell"><code>larreco/WireCell/</code></a>
+It works for any larsoft output that contains <em>Space Points</em>.
 To change or add different <code>SpacePoint</code> algorithms (it supports multiple algorithms),
 copy the <code>celltree_{detector}.fcl</code> file to your working directory
 and modify the line <code>SpacePointLabels: ["pmtrackdc"]</code> to include your favorate algorithms.</p>
