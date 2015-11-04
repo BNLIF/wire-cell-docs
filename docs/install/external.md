@@ -12,6 +12,8 @@ There are three likely ways to supply the required externals described below.
 
 3. use an existing site-installation.
 
+4. OS-level installation.
+
 The following sections gives details on each of these approaches.
 
 
@@ -237,4 +239,15 @@ At Fermilab, externals are provided by UPS.
 $ source /grid/fermiapp/products/larsoft/setups
 $ setup root v6_04_02 -q e7:prof
 $ setup boost v1_57_0 -q e7:prof
+```
+
+# OS level installation
+
+## Mac
+
+Install homebrew and do
+
+```bash
+$ brew install boost
+$ brew install homebrew/science/root6
 ```
