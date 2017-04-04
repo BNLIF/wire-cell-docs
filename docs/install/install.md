@@ -16,6 +16,7 @@ information on what software is needed. In summary you will need:
 * BOOST 1.55 (or equiv)
 * ROOT v6
 * Python 2.7 (optional unless you want Python bindings)
+* wire-cell-xdata-root (follow [this instruction](https://github.com/WireCell/wire-cell-xdata-root))
 
 You will need to set up your run-time environment so that these
 commands do not fail and give the expected version:
