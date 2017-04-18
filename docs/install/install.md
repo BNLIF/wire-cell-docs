@@ -2,22 +2,14 @@
 
 # Installation of prerequisites
 
-An automated installation method for the externals is provided.  If
-you elect to use it, see [Install Externals](external.md) and come
-back here after setting up your user environment.
-
-Otherwise, you must provide the external packages yourself. The Wire
-Cell build system assumes they are available and found in the "usual
-manner".  The definitive, full list of required packages, their
-versions and build details are kept in `worch.cfg` file in
-`wire-cell-externals`. Refer to that for the most up-to-date
-information on what software is needed. In summary you will need:
+The Wire Cell prototype code requires at least:
 
 * BOOST 1.55 (or equiv)
 * ROOT v6
 * Python 2.7 (optional unless you want Python bindings)
 * wire-cell-xdata-root (follow [this instruction](https://github.com/WireCell/wire-cell-xdata-root))
 
+More information is available in the section [Install Externals](external.md). 
 You will need to set up your run-time environment so that these
 commands do not fail and give the expected version:
 
@@ -35,7 +27,7 @@ $ python -c 'import ROOT; print ROOT.gROOT.GetVersion()'
 Wire Cell is made up of several source packages.  A top-level
 `wire-cell` package is used to aggregate them together as well as
 provide the top-level build environment.  The aggregation is done
-using Git modules.
+using Git submodules.
 
 If you are a developer wanting to use SSH keys (default) to access the
 repository clone with the appropriate URL:
@@ -85,9 +77,7 @@ To configure, build and install the wire cell code do:
 $ waf --prefix=/path/to/install configure build install
 ```
 
-(If you came here after exercising the automatic external
-installation, take note this is not a Worch build - there is no
-`--orch-config` option.)
+If the external prerequisites are not automatically found by `waf` their locations can be set by some options. See `waf --help`.
 
 # Run-time environment
 
