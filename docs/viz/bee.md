@@ -2,9 +2,9 @@
 
 # Introduction to BEE
 
-Displaying 3D reconstrution results is difficult.
-Often it requires installation of some platform-dependent programs and dowloading some pre-formated data.
-For most physcists, it's too much effort ("Just show me the results!")
+Displaying 3D reconstruction results is difficult.
+Often it requires installation of some platform-dependent programs and downloading some pre-formated data.
+For most physicists, it's too much effort ("Just show me the results!")
 
 [BEE](http://www.phy.bnl.gov/wire-cell/bee/) is a web-based application intended to solve this problem, and brings the interactive 3D world to the physicists. Some of the features include:
 
@@ -35,10 +35,22 @@ The following table summarizes the basic interactions with BEE on different devi
 | Pan    | Right button drag | Left / Right / Up / Down | Three-finger swipe |
 | Zoom in / Zoom out | Mouse wheel | Shift+Up / Shift+Down | Pinch & Zoom |
 
+# Advanced Interactions
+
+## Show and Overlay results from different algorithms
+
+Bee supports any algorithms that produce a set of 3D space points (with or without charge). In the right control panel, the "Recon" folder shows the list of algorithms that Bee can load. By default, only the first one is loaded and its space points are displayed on screen. To show others:
+
+- Click on the name of the algorithm. If it is not loaded yet, Bee will download its space points from the server. 
+- Notice that the left panel now shows the name, size, opacity and color of the current actively selected algorithm.
+- Increase the opacity until it is displayed on screen.
+- You can now switch to other algorithms to adjust their opacity so that they can be overlayed.
+- You may need to uncheck the "Show Charge" checkbox (on the right panel) so that the algorithm can be represented by a single color.
+
 # Hotkeys
 
-Users may find it conveninet that most actions in BEE can be achieved using keyboard shortcuts.
-The full list of hotkeys can be found through "Menu -> View -> Hotkey List", and is also summarized below:
+Users may find it convenient that most actions in BEE can be achieved using keyboard shortcuts.
+The full list of hot-keys can be found through "Menu -> View -> Hotkey List", and is also summarized below:
 
 <table class='table'>
     <thead>
