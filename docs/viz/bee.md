@@ -6,15 +6,15 @@ Displaying 3D reconstrution results is difficult.
 Often it requires installation of some platform-dependent programs and dowloading some pre-formated data.
 For most physcists, it's too much effort ("Just show me the results!")
 
-[BEE](http://www.phy.bnl.gov/wire-cell/bee/) is a web-based application intended to solve this problem, and bring the interactive 3D world to the physicists.
-In particular, one can enjoy the following features:
+[BEE](http://www.phy.bnl.gov/wire-cell/bee/) is a web-based application intended to solve this problem, and brings the interactive 3D world to the physicists. Some of the features include:
 
-- *No setup* : Just go to [the BEE homepage](http://www.phy.bnl.gov/wire-cell/bee/).
-- *Cross-platform* : Runs everywhere with [a modern web browser that supports WebGL](http://caniuse.com/#feat=webgl), including mobile devices.
-- *Interactive* : Unleashes the power of WebGL with mouse, keyboard and touch devices.
-- *Optimized for LArTPC* : Tomographic mode, projections, multiple geometries, ...
-- *Optimized for developers* : User uploads, multiple algorithms, MC truth, customizable overlay, ...
-- *Optimized for public* : Explore the large preset samples of different neutrino interactions in LArTPC!
+- **No installation** : Just go to [the BEE homepage](http://www.phy.bnl.gov/wire-cell/bee/).
+- **Cross-platform** : Runs everywhere with [a modern web browser that supports WebGL](http://caniuse.com/#feat=webgl), including mobile devices.
+- **Easy share**: Each event has its own url that can be shared with anyone in the world.
+- **Interactive** : Unleashes the power of WebGL with mouse and keyboard.
+- **Cross experiments**: Supports most LArTPC detector geometries.
+- **Ready for analysis** : User uploads, multiple algorithms, MC truth, customizable overlay, etc.
+
 
 # Requirements
 
@@ -24,6 +24,8 @@ The only requirements to run BEE are:
   We recommend [Google Chrome](http://www.google.com/chrome/) for the best experience.
 - An internet connection.
 - A relatively good graphic card. A discrete GPU greatly enhances the performance.
+
+# Basic Interactions
 
 The following table summarizes the basic interactions with BEE on different devices:
 
@@ -63,6 +65,10 @@ The full list of hotkeys can be found through "Menu -> View -> Hotkey List", and
         <td>Prev Slice</td><td>j</td>
       </tr>
       <tr>
+        <td>Next Flash</td><td>></td>
+        <td>Prev Flash</td><td><</td>
+      </tr>
+      <tr>
         <td>Center to Event</td><td>c</td>
         <td>Reset Camera</td><td>r</td>
       </tr>
@@ -72,7 +78,7 @@ The full list of hotkeys can be found through "Menu -> View -> Hotkey List", and
       </tr>
       <tr>
         <td>X-Z view</td><td>z</td>
-        <td>Y-Z view</td><td>c</td>
+        <td>X-Y view</td><td>x</td>
       </tr>
       <tr>
         <td>Zoom in</td><td>Shift+Up</td>
@@ -89,6 +95,10 @@ The full list of hotkeys can be found through "Menu -> View -> Hotkey List", and
       <tr>
         <td>Increase Point Size</td><td>+</td>
         <td>Decrease Point Size</td><td>_</td>
+      </tr>
+      <tr>
+        <td>Redraw All Points</td><td>o</td>
+        <td>Show FPS</td><td>s</td>
       </tr>
     </tbody>
 </table>
