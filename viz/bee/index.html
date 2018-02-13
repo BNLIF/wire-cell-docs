@@ -163,6 +163,11 @@
                 <li class="toctree-l3"><a href="#basic-interactions">Basic Interactions</a></li>
                 
             
+                <li class="toctree-l3"><a href="#advanced-interactions">Advanced Interactions</a></li>
+                
+                    <li><a class="toctree-l4" href="#show-and-overlay-results-from-different-algorithms">Show and Overlay results from different algorithms</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#hotkeys">Hotkeys</a></li>
                 
             
@@ -241,13 +246,17 @@
 <li><a href="#introduction-to-bee">Introduction to BEE</a></li>
 <li><a href="#requirements">Requirements</a></li>
 <li><a href="#basic-interactions">Basic Interactions</a></li>
+<li><a href="#advanced-interactions">Advanced Interactions</a><ul>
+<li><a href="#show-and-overlay-results-from-different-algorithms">Show and Overlay results from different algorithms</a></li>
+</ul>
+</li>
 <li><a href="#hotkeys">Hotkeys</a></li>
 </ul>
 </div>
 <h1 id="introduction-to-bee">Introduction to BEE</h1>
-<p>Displaying 3D reconstrution results is difficult.
-Often it requires installation of some platform-dependent programs and dowloading some pre-formated data.
-For most physcists, it's too much effort ("Just show me the results!")</p>
+<p>Displaying 3D reconstruction results is difficult.
+Often it requires installation of some platform-dependent programs and downloading some pre-formated data.
+For most physicists, it's too much effort ("Just show me the results!")</p>
 <p><a href="http://www.phy.bnl.gov/wire-cell/bee/">BEE</a> is a web-based application intended to solve this problem, and brings the interactive 3D world to the physicists. Some of the features include:</p>
 <ul>
 <li><strong>No installation</strong> : Just go to <a href="http://www.phy.bnl.gov/wire-cell/bee/">the BEE homepage</a>.</li>
@@ -297,9 +306,19 @@ For most physcists, it's too much effort ("Just show me the results!")</p>
 </tr>
 </tbody>
 </table>
+<h1 id="advanced-interactions">Advanced Interactions</h1>
+<h2 id="show-and-overlay-results-from-different-algorithms">Show and Overlay results from different algorithms</h2>
+<p>Bee supports any algorithms that produce a set of 3D space points (with or without charge). In the right control panel, the "Recon" folder shows the list of algorithms that Bee can load. By default, only the first one is loaded and its space points are displayed on screen. To show others:</p>
+<ul>
+<li>Click on the name of the algorithm. If it is not loaded yet, Bee will download its space points from the server. </li>
+<li>Notice that the left panel now shows the name, size, opacity and color of the current actively selected algorithm.</li>
+<li>Increase the opacity until it is displayed on screen.</li>
+<li>You can now switch to other algorithms to adjust their opacity so that they can be overlayed.</li>
+<li>You may need to uncheck the "Show Charge" checkbox (on the right panel) so that the algorithm can be represented by a single color.</li>
+</ul>
 <h1 id="hotkeys">Hotkeys</h1>
-<p>Users may find it conveninet that most actions in BEE can be achieved using keyboard shortcuts.
-The full list of hotkeys can be found through "Menu -&gt; View -&gt; Hotkey List", and is also summarized below:</p>
+<p>Users may find it convenient that most actions in BEE can be achieved using keyboard shortcuts.
+The full list of hot-keys can be found through "Menu -&gt; View -&gt; Hotkey List", and is also summarized below:</p>
 <table class='table'>
     <thead>
       <tr>
