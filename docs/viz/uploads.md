@@ -2,7 +2,7 @@
 
 # JSON Schema
 
-BEE can be used to display results from any algorithms that produce *3D space points*.
+Bee can be used to display results from any algorithms that produce *3D space points*.
 At the core, it parses a JSON file that looks like:
 
 ```json
@@ -14,29 +14,47 @@ At the core, it parses a JSON file that looks like:
     "y"        : [2.0, 3.0, 4.0],
     "z"        : [3.0, 7.0, 4.5],
     "q"        : [3000, 4200, 5600],
+    "nq"       : [1, 1, 1],
+    "cluster_id" : [1, 1, 1],
+    "real_cluster_id" : [1, 1, 1],
     "geom"     : "uboone",
-    "type"     : "wire-cell"
+    "type"     : "wire-cell",
 }
 ```
 
 In the JSON file, only the `x`, `y`, and `z` variables are required, all others are optional.
 Their descriptions are summarized below:
 
-| Name | Description | Default |
-| ---- | ----------- | ------- |
-| x | array of x coordinates of the 3D space points [cm] | (required) |
-| y | array of y coordinates of the 3D space points [cm] | (required) |
-| z | array of z coordinates of the 3D space points [cm] | (required) |
-| q | array of charges for the 3D space points [number of electrons] | [0,..] |
-| runNo | DAQ run number | 0 |
-| subRunNo | DAQ subrun number | 0 |
-| eventNo | DAQ event number | 0 |
-| geom | name of the detector geometry ("uboone", "dune35t", "protodune") | "uboone" |
-| type | name of the algorithm | "" |
+| Name | Description | Default | Note |
+| ---- | ----------- | ------- | ---- |
+| x | array of x coordinates of the 3D points [cm] |  |required|
+| y | array of y coordinates of the 3D points [cm] |  |required|
+| z | array of z coordinates of the 3D points [cm] |  |required|
+| q | array of charges of the 3D points [# electrons] | [0, ...] ||
+| nq | array of number of points in each sampled Blob | [1, ...] |unused|
+| cluster_id | array of cluster id of the 3D points | [1, ...] ||
+| real_cluster_id | | [-1, ...] |only for backward compatibility|
+| runNo | DAQ run number | 0 ||
+| subRunNo | DAQ subrun number | 0 ||
+| eventNo | DAQ event number | 0 ||
+| geom | name of the detector geometry | "uboone" ||
+| type | name of the algorithm | "" |unused|
+
+The `cluster_id` is usually assigned such that the larger cluster has a smaller id.
+
+Since all json files are transferred and parsed as text files, one should be careful to not include too many unnecessary digits in each parameter to save the bandwidth and memory usage.
+
+# Additional files
+
+In addition to the files that contain the reconstructed 3D points, some additional files are supported in Bee to provide extra information about the event:
+
+- `mc.json` provides the Geant4 truth level information about the particle flow information. This file can be produced inside LArSOFT such as the [CellTree dumper](https://cdcvs.fnal.gov/redmine/projects/larreco/repository/revisions/develop/entry/larreco/WireCell/CellTree_module.cc). Example: [mc.json](https://www.phy.bnl.gov/twister/bee/set/uboone/lee/2021/wire-cell-gallery/event/0/mc/).
+- `op.json` provides the reconstructed optical flash information. Example: [op.json](https://www.phy.bnl.gov/twister/bee/set/uboone/lee/2021/wire-cell-gallery/event/0/op/).
+- `channel-deadarea.json` provides the dead areas viewed in Y-Z plane. Each area is represented by a polygon using its vertex coordinates `[[y1, z1], [y2, z2], [y3, z3], ...]` in cm. One should be careful not to sample additional points along a line. The array of the polyons comprises the whole dead areas.  Example: [channel-deadarea.json](https://www.phy.bnl.gov/twister/bee/set/uboone/lee/2021/wire-cell-gallery/event/0/channel-deadarea/)
 
 # Upload File Structure
 
-BEE supports user uploads through drag-and-drop to the dropzone on [the BEE homepage](http://www.phy.bnl.gov/wire-cell/bee/).
+Bee supports user uploads through drag-and-drop to the dropzone on [the Bee homepage](http://www.phy.bnl.gov/wire-cell/bee/).
 The uploaded file must be a `.zip` file that contains the following structure
 
 ```
@@ -46,10 +64,16 @@ myfile.zip
     │   ├── 0-myAlg1.json
     │   ├── 0-myAlg2.json
     │   ├── 0-myAlg3.json
+    |   ├── 0-mc.json
+    |   ├── 0-op.json
+    |   ├── 0-channel-deadarea.json
     ├── 1
     │   ├── 1-myAlg1.json
     │   ├── 1-myAlg1.json
     │   ├── 1-myAlg1.json
+    |   ├── 1-mc.json
+    |   ├── 1-op.json
+    |   ├── 1-channel-deadarea.json
 
 ```
 
@@ -78,7 +102,7 @@ python dump_json.py [filename] [alg1 alg2 ...]
 ```
 
 The currently available Wire-Cell algorithms are `simple`, `charge`, `true`, and `deblob`.
-At the end of the run, a `to_upload.zip` is created and can be drag-to-upload to [BEE](http://www.phy.bnl.gov/wire-cell/bee/)
+At the end of the run, a `to_upload.zip` is created and can be drag-to-upload to [BEE](https://www.phy.bnl.gov/twister/bee)
 
 Some notes:
 
@@ -104,10 +128,10 @@ or, for MicroBooNE / protoDUNE, change the corresponding `.fcl` file to
 
 
 It will create a `bee/bee_upload.zip` file under your working directory.
-You can then drag-and-drop the zip file to [BEE](http://www.phy.bnl.gov/wire-cell/bee/) to view the results
+You can then drag-and-drop the zip file to [Bee](https://www.phy.bnl.gov/twister/bee) to view the results
 (and MC tracks).
 
-The `CellTree` module is located under [`larreco/WireCell/`](https://cdcvs.fnal.gov/redmine/projects/larreco/repository/revisions/develop/show/WireCell)
+The `CellTree` module is located under [`larreco/WireCell/`](https://cdcvs.fnal.gov/redmine/projects/larreco/repository/revisions/develop/entry/larreco/WireCell/CellTree_module.cc)
 It works for any larsoft output that contains *Space Points*.
 To change or add different `SpacePoint` algorithms (it supports multiple algorithms),
 copy the `celltree_{detector}.fcl` file to your working directory
