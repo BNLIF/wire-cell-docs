@@ -1,14 +1,14 @@
 [TOC]
 
-# Introduction to BEE
+# Introduction to Bee
 
 Displaying 3D reconstruction results is difficult.
 Often it requires installation of some platform-dependent programs and downloading some pre-formated data.
 For most physicists, it's too much effort ("Just show me the results!")
 
-[BEE](http://www.phy.bnl.gov/wire-cell/bee/) is a web-based application intended to solve this problem, and brings the interactive 3D world to the physicists. Some of the features include:
+[Bee](https://www.phy.bnl.gov/twister/bee/) is a web-based application intended to solve this problem, and brings the interactive 3D world to the physicists. Some of the features include:
 
-- **No installation** : Just go to [the BEE homepage](http://www.phy.bnl.gov/wire-cell/bee/).
+- **No installation** : Just go to [the Bee homepage](https://www.phy.bnl.gov/twister/bee/).
 - **Cross-platform** : Runs everywhere with [a modern web browser that supports WebGL](http://caniuse.com/#feat=webgl), including mobile devices.
 - **Easy share**: Each event has its own url that can be shared with anyone in the world.
 - **Interactive** : Unleashes the power of WebGL with mouse and keyboard.
@@ -18,7 +18,7 @@ For most physicists, it's too much effort ("Just show me the results!")
 
 # Requirements
 
-The only requirements to run BEE are:
+The only requirements to run Bee are:
 
 - A modern web browser that supports WebGL. ([Will my browser work?](http://caniuse.com/#feat=webgl))
   We recommend [Google Chrome](http://www.google.com/chrome/) for the best experience.
@@ -27,7 +27,7 @@ The only requirements to run BEE are:
 
 # Basic Interactions
 
-The following table summarizes the basic interactions with BEE on different devices:
+The following table summarizes the basic interactions with Bee on different devices:
 
 | Action | Mouse | Keyboard | Touch |
 | ------ | ----- | -------- | ----- |

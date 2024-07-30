@@ -4,7 +4,7 @@ site_name: Wire Cell Documentation
 site_description: Documentation for the LArTPC Wire Cell reconstruction packages
 site_url: https://BNLIF.github.io/wire-cell-docs/
 theme: readthedocs
-pages:
+nav:
   - Overview: index.md
   - Installation:
     - Install Wire Cell: install/install.md
@@ -19,7 +19,7 @@ pages:
     - Making Cells: alg/cell.md
     - Blob Reconstruction: alg/blob.md
   - Visualization:
-    - BEE: viz/bee.md
+    - Bee: viz/bee.md
     - User Uploads: viz/uploads.md
   - Meta:
     - About: meta/meta.md
