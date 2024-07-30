@@ -1,104 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
-     <loc>https://BNLIF.github.io/wire-cell-docs//</loc>
-     <lastmod>2018-02-13</lastmod>
-     <changefreq>daily</changefreq>
+         <loc>https://BNLIF.github.io/wire-cell-docs/</loc>
+         <lastmod>2024-07-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>https://BNLIF.github.io/wire-cell-docs//install/install/</loc>
-     <lastmod>2018-02-13</lastmod>
-     <changefreq>daily</changefreq>
+         <loc>https://BNLIF.github.io/wire-cell-docs/alg/blob/</loc>
+         <lastmod>2024-07-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://BNLIF.github.io/wire-cell-docs//install/external/</loc>
-     <lastmod>2018-02-13</lastmod>
-     <changefreq>daily</changefreq>
+         <loc>https://BNLIF.github.io/wire-cell-docs/alg/cell/</loc>
+         <lastmod>2024-07-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://BNLIF.github.io/wire-cell-docs//dev/overview/</loc>
-     <lastmod>2018-02-13</lastmod>
-     <changefreq>daily</changefreq>
+         <loc>https://BNLIF.github.io/wire-cell-docs/dev/data/</loc>
+         <lastmod>2024-07-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://BNLIF.github.io/wire-cell-docs//dev/dev/</loc>
-     <lastmod>2018-02-13</lastmod>
-     <changefreq>daily</changefreq>
+         <loc>https://BNLIF.github.io/wire-cell-docs/dev/dev/</loc>
+         <lastmod>2024-07-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://BNLIF.github.io/wire-cell-docs//dev/iface/</loc>
-     <lastmod>2018-02-13</lastmod>
-     <changefreq>daily</changefreq>
+         <loc>https://BNLIF.github.io/wire-cell-docs/dev/iface/</loc>
+         <lastmod>2024-07-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://BNLIF.github.io/wire-cell-docs//dev/data/</loc>
-     <lastmod>2018-02-13</lastmod>
-     <changefreq>daily</changefreq>
+         <loc>https://BNLIF.github.io/wire-cell-docs/dev/overview/</loc>
+         <lastmod>2024-07-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://BNLIF.github.io/wire-cell-docs//dev/test/</loc>
-     <lastmod>2018-02-13</lastmod>
-     <changefreq>daily</changefreq>
+         <loc>https://BNLIF.github.io/wire-cell-docs/dev/test/</loc>
+         <lastmod>2024-07-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://BNLIF.github.io/wire-cell-docs//alg/cell/</loc>
-     <lastmod>2018-02-13</lastmod>
-     <changefreq>daily</changefreq>
+         <loc>https://BNLIF.github.io/wire-cell-docs/install/external/</loc>
+         <lastmod>2024-07-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://BNLIF.github.io/wire-cell-docs//alg/blob/</loc>
-     <lastmod>2018-02-13</lastmod>
-     <changefreq>daily</changefreq>
+         <loc>https://BNLIF.github.io/wire-cell-docs/install/install/</loc>
+         <lastmod>2024-07-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://BNLIF.github.io/wire-cell-docs//viz/bee/</loc>
-     <lastmod>2018-02-13</lastmod>
-     <changefreq>daily</changefreq>
+         <loc>https://BNLIF.github.io/wire-cell-docs/meta/meta/</loc>
+         <lastmod>2024-07-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://BNLIF.github.io/wire-cell-docs//viz/uploads/</loc>
-     <lastmod>2018-02-13</lastmod>
-     <changefreq>daily</changefreq>
+         <loc>https://BNLIF.github.io/wire-cell-docs/test/</loc>
+         <lastmod>2024-07-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://BNLIF.github.io/wire-cell-docs//meta/meta/</loc>
-     <lastmod>2018-02-13</lastmod>
-     <changefreq>daily</changefreq>
+         <loc>https://BNLIF.github.io/wire-cell-docs/viz/bee/</loc>
+         <lastmod>2024-07-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
-        
-    
-
+    <url>
+         <loc>https://BNLIF.github.io/wire-cell-docs/viz/uploads/</loc>
+         <lastmod>2024-07-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>

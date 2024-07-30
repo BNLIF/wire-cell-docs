@@ -1,249 +1,113 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Building - Wire Cell Documentation</title>
-  
-
-  <link rel="shortcut icon" href="../../img/favicon.ico">
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
-
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Building";
-  </script>
-  
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  <script src="../../js/theme.js"></script> 
-
-  
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://BNLIF.github.io/wire-cell-docs/dev/dev/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Building - Wire Cell Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Building";
+        var mkdocs_page_input_path = "dev/dev.md";
+        var mkdocs_page_url = "/wire-cell-docs/dev/dev/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> Wire Cell Documentation</a>
-        <div role="search">
+          <a href="../.." class="icon icon-home"> Wire Cell Documentation
+        </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../..">Overview</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Installation</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../install/install/">Install Wire Cell</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../install/external/">Install Externals</a>
-        
-    </li>
-
-        
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Overview</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../install/install/">Install Wire Cell</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../install/external/">Install Externals</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developer</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Building</a>
+    <ul class="current">
     </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Developer</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../overview/">Overview</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Building</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#build-dancing">Build Dancing</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#debug">Debug</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#new-packages">New packages</a></li>
-                
-                    <li><a class="toctree-l4" href="#considerations">Considerations</a></li>
-                
-                    <li><a class="toctree-l4" href="#source-package-conventions">Source Package Conventions</a></li>
-                
-                    <li><a class="toctree-l4" href="#build-packages">Build packages</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#namespaces">Namespaces</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#dealing-with-git-submodules">Dealing with git submodules</a></li>
-                
-            
-            </ul>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../iface/">Interfaces</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../data/">Persistency</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../test/">Testing</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Algorithms</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../alg/cell/">Making Cells</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../alg/blob/">Blob Reconstruction</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Visualization</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../viz/bee/">BEE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../viz/uploads/">User Uploads</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Meta</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../meta/meta/">About</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-        </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../iface/">Interfaces</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data/">Persistency</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../test/">Testing</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Algorithms</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../alg/cell/">Making Cells</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../alg/blob/">Blob Reconstruction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Visualization</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../viz/bee/">Bee</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../viz/uploads/">User Uploads</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Meta</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../meta/meta/">About</a>
+                  </li>
+              </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">Wire Cell Documentation</a>
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Wire Cell Documentation</a>
+        
       </nav>
-
-      
       <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../..">Docs</a> &raquo;</li>
-    
-      
-        
-          <li>Developer &raquo;</li>
-        
-      
-    
-    <li>Building</li>
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Developer</li>
+      <li class="breadcrumb-item active">Building</li>
     <li class="wy-breadcrumbs-aside">
-      
-        
-          <a href="https://github.com/BNLIF/wire-cell-docs/" class="icon icon-github"> Edit on GitHub</a>
-        
-      
+          <a href="https://github.com/BNLIF/wire-cell-docs/edit/master/docs/dev/dev.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
 </div>
-          <div role="main">
-            <div class="section">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
               
                 <div class="toc">
 <ul>
@@ -262,36 +126,29 @@
 <p>Here is what you will do in the act of developing code.</p>
 <h1 id="build-dancing">Build Dancing</h1>
 <p>To rebuild after hacking on the source just type:</p>
-<pre><code class="bash">$ waf
+<pre><code class="language-bash">$ waf
 </code></pre>
-
 <p>When ready to install into the configured “prefix” installation area:</p>
-<pre><code class="bash">$ waf install
+<pre><code class="language-bash">$ waf install
 </code></pre>
-
 <p>To force a full rebuild:</p>
-<pre><code class="bash">$ waf clean build
+<pre><code class="language-bash">$ waf clean build
 </code></pre>
-
 <p>To limit building to just one submodule:</p>
-<pre><code class="bash">$ cd &lt;subdir&gt;/
+<pre><code class="language-bash">$ cd &lt;subdir&gt;/
 $ waf
 </code></pre>
-
 <h1 id="debug">Debug</h1>
 <p>To build for debugging one needs to reconfigure waf with a <code>--build-debug=&lt;flags&gt;</code> option and then the project must be cleaned and rebuilt. This can be done all at once like:</p>
-<pre><code class="bash">$ waf --prefix=/path/to/install --build-debug=-ggdb3 clean configure build install
+<pre><code class="language-bash">$ waf --prefix=/path/to/install --build-debug=-ggdb3 clean configure build install
 </code></pre>
-
 <p>You may also want to see what commands Waf is actually running to confirm this option is transmitted, just add a <code>-v</code> to the command line:</p>
-<pre><code class="bash">$ waf -v
+<pre><code class="language-bash">$ waf -v
 </code></pre>
-
 <p>Finally, run GDB in your usual, preferred manner:</p>
-<pre><code class="bash">$ gdb --args /home/bviren/projects/wire-cell/top/build/nav/test_geomdatasource
+<pre><code class="language-bash">$ gdb --args /home/bviren/projects/wire-cell/top/build/nav/test_geomdatasource
 (gdb) run
 </code></pre>
-
 <h1 id="new-packages">New packages</h1>
 <p>New wire-cell packages can be added easily.</p>
 <h2 id="considerations">Considerations</h2>
@@ -311,10 +168,9 @@ $ waf
 <p>First, each source package should be kept in it's own git repository. The recommended package naming convention is:</p>
 <pre><code>wire-cell-NAME
 </code></pre>
-
 <p>where <code>NAME</code> is some short identifier of the package's primary purpose.</p>
 <p>The contents of the source package must be organized following these sub-directory conventions</p>
-<pre><code class="bash">src/             # C++ source file for libraries with .cxx extensions or private headers
+<pre><code class="language-bash">src/             # C++ source file for libraries with .cxx extensions or private headers
 inc/NAME/        # public/API C++ header files with .h extensions
 dict/LinkDef.h   # ROOT linkdef header (for rootcling dictionaries)
 tests/           # Unit tests Python (nosetests) files like test_*.py or main C++ programs named like test_*.cxx.
@@ -322,11 +178,9 @@ apps/            # main application(s), one appname.cxx file for each app named 
 python/NAME      # python modules (todo: not yet supported)
 wscript_build    # a brief waf file
 </code></pre>
-
 <p>The <code>wscript_build</code> file specifies a name for the binary package (in general similar but not identical to the source package name) and a list of any other packages part of the wire-cell system on which it depends. For example the <code>wire-cell-nav</code> source package builds to a <code>WireCellNav</code> binary package and it depends on the WireCellData package and so its <code>wscript_build</code> file is:</p>
 <pre><code>bld.make_package('WireCellNav', use='WireCellData')
 </code></pre>
-
 <p>This is Python and the <code>bld</code> object is a Waf build context. It is provided automagically when waf interprets this file.</p>
 <h2 id="build-packages">Build packages</h2>
 <p>The above is about code packages. Code packages are built via a build package. This build package, <code>wire-cell</code> is but one possible "view" into all the wire cell packages. Other build packages may be created which only build some sub-set of all wire cell packages.</p>
@@ -337,22 +191,19 @@ $ echo &quot;bld.make_package('WireCell&lt;Name&gt;', use='WireCellNav WireCellD
 $ git init
 $ git commit -a -m &quot;Start code package &lt;name&gt;&quot;
 </code></pre>
-
 <p>Replace <code>&lt;name&gt;</code> with your package name. And, of course, you may want to put more code than just the <code>wscript_build</code> file. Also, that file should list what packages your package depends on.</p>
 <p>Now, make a new repository by going to the <a href="https://github.com/BNLIF">BNLIF GitHub</a> and clicking "New repository" button. Give it a name like <code>wire-cell-&lt;name&gt;</code>. Copy-and-paste the two command it tells you to use:</p>
-<pre><code class="bash">$ git remote add origin git@github.com:BNLIF/wire-cell-&lt;name&gt;.git
+<pre><code class="language-bash">$ git remote add origin git@github.com:BNLIF/wire-cell-&lt;name&gt;.git
 $ git push -u origin master
 </code></pre>
-
 <p>Finally, move aside the local repository and add it right back as a submodule:</p>
-<pre><code class="bash">$ cd ..  # back to top
+<pre><code class="language-bash">$ cd ..  # back to top
 $ mv &lt;name&gt; &lt;name&gt;.moved
 $ git submodule add -- git@github.com:BNLIF/wire-cell-&lt;name&gt;.git &lt;name&gt;
 $ git submodule update
 $ git commit -a -m &quot;Added &lt;name&gt; to top-level build package.&quot;
 $ git push
 </code></pre>
-
 <p>Whew!</p>
 <h1 id="namespaces">Namespaces</h1>
 <p>The namespace WireCell is used for all "core" wire cell code. Code that is used to glue this core functionality into other systems may use another namespace but should not use WireCell. For example, the "simple simulation tree" uses <code>WireCellSst</code>.</p>
@@ -404,29 +255,21 @@ line of development actually diverged.</p>
 </ul>
               
             </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../iface/" class="btn btn-neutral float-right" title="Interfaces"/>Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../overview/" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../overview/" class="btn btn-neutral float-left" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../iface/" class="btn btn-neutral float-right" title="Interfaces">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-    
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+          
         </div>
       </div>
 
@@ -434,19 +277,31 @@ line of development actually diverged.</p>
 
   </div>
 
-<div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-        <span><a href="../overview/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../iface/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/BNLIF/wire-cell-docs/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../overview/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../iface/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
 
 </body>
 </html>
